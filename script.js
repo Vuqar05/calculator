@@ -97,7 +97,6 @@ function round(num) {
 
 
 document.addEventListener("keydown", e => {
-    console.log(e)
     let key = e.key
     if ("1234567890/+-=".includes(key)) {
         processCalculatorInput(key)
@@ -107,6 +106,9 @@ document.addEventListener("keydown", e => {
     }
     else if (key === "Backspace") {
         processCalculatorInput(e.ctrlKey ? "clr" : "del")
+    }
+    else if (key === "Enter") {
+        processCalculatorInput("=")
     }
 
 })
