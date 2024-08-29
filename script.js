@@ -1,4 +1,5 @@
 const MAX_CHARS = 20
+const ROUND_DEC_NUM = 3 //How many decimal digits to leave when rounding?
 
 const buttons = document.querySelectorAll(".btn")
 const mainDisplayText = document.querySelector("#main-text")
@@ -84,9 +85,14 @@ function getResultFromCalc() {
     switch (operator){
         case "+": return num1 + num2
         case "-": return num1 - num2
-        case "/": return num1 / num2
+        case "/": return round(num1 / num2)
         case "✻": return num1 * num2
         default: return undefined
     }
+}
 
+
+function round(num) {
+    let multiplier = 10 ** ROUND_DEC_NUM
+    return Math.round(num * (multiplier)) / multiplier
 }
