@@ -2,11 +2,14 @@
     font-family: "Agency FB", math;
     font-size: larger;
     font-weight: bolder;
+    color: #fffecb
+
 }
 
 html, body {
     margin: 0;
     height: 100%;
+    background-color: #d5ae77;
 }
 
 body {
@@ -16,10 +19,11 @@ body {
 }
 
 .calculator {
+    padding: 2vh 0 0 0;
     flex-basis: min(90vw, 450px);
     height: min(135vw, 675px);
 
-    background-color: #424141;
+    background-color: #494368;
     border-radius: 20px;
 
     display: flex;
@@ -31,10 +35,42 @@ body {
 .display {
     height: 15%;
     width: 90%;
-    background-color: #ff9100;
+    background-color: #aed66a;
     margin: 2% 1% 1% 10px;
     border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
+
+#main-display {
+    flex-grow: 8;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+
+#prev-display {
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+}
+
+#main-text {
+    margin: 0 5px;
+    font-size: 42px;
+}
+#prev-text{
+    margin: 5px 5px 0 0;
+
+    font-size: 16px;
+    color: rgba(66, 65, 65, 0.56);
+}
+
 
 .buttons-container {
     margin: 2% 1% 5% 1%;
@@ -61,16 +97,91 @@ body {
 
 .btn {
     flex-basis: 25%;
-    background-color: rgb(245, 245, 245);
+    background-color: #f8ac46;
+    border-color: #f8ac46;
     border-style: solid;
     border-radius: 5px;
-    box-shadow: rgb(230, 224, 224) 0 1px 2px 0, rgba(245, 245, 245, 0.85) 0 1px 3px 1px;
 }
 
-.btn:active {
-    background-color: rgba(245, 245, 245, 0.85);
+.btn:hover{
+    background-color: rgba(248, 172, 70, 0.9);
+    border-color: rgba(248, 172, 70, 0.9);
 }
+
+.btn:active{
+    background-color: rgba(248, 172, 70, 0.7);
+    border-color: rgba(248, 172, 70, 0.7);
+}
+
+
+.num-btn {
+    background-color: #F4B393;
+    border-color: #F4B393;
+}
+.num-btn:hover {
+    background-color: rgba(245, 180, 147, 0.9);
+    border-color: rgba(245, 180, 147, 0.9);;
+}
+
+.num-btn:active {
+    background-color: rgba(245, 180, 147, 0.7);
+    border-color: rgba(245, 180, 147, 0.7);;
+}
+
+
+#clr {
+    background-color: #7A28CB;
+    border-color: #7A28CB;
+}
+
+#clr:hover{
+    background-color: rgba(122, 41, 204, 0.9);
+    border-color: rgba(122, 41, 204, 0.9);
+}
+
+#clr:active{
+    background-color: rgba(122, 41, 204, 0.7);
+    border-color: rgba(122, 41, 204, 0.7);
+}
+
+
+#del {
+    background-color: #FC60A8;
+    border-color: #FC60A8;;
+}
+
+#del:hover {
+    background-color: rgba(252, 96, 169, 0.9);
+    border-color: rgba(252, 96, 169, 0.9);
+}
+
+#del:active {
+    background-color: rgba(252, 96, 169, 0.7);
+    border-color: rgba(252, 96, 169, 0.7);
+}
+
+
+#equals {
+    background-color: #aed66a;
+    border-color: #aed66a;
+}
+
+#equals:hover {
+    background-color: rgba(175, 214, 107, 0.9);
+    border-color: rgba(175, 214, 107, 0.9);
+}
+
+#equals:active {
+    background-color: rgba(175, 214, 107, 0.7);
+    border-color: rgba(175, 214, 107, 0.7);
+}
+
 
 #zero, #clr {
     flex-basis: calc(50% + 10px);
+}
+
+
+#multiply {
+    font-size: large;
 }
