@@ -99,10 +99,14 @@ function round(num) {
 document.addEventListener("keydown", e => {
     console.log(e)
     let key = e.key
-    if ("1234567890*/+-=".includes(key)) {
+    if ("1234567890/+-=".includes(key)) {
         processCalculatorInput(key)
+    }
+    else if (key === "*") {
+        processCalculatorInput("✻")
     }
     else if (key === "Backspace") {
         processCalculatorInput(e.ctrlKey ? "clr" : "del")
     }
+
 })
