@@ -6,7 +6,7 @@ const mainDisplayText = document.querySelector("#main-text")
 const prevDisplayText = document.querySelector("#prev-text")
 
 for (const button of buttons) {
-    button.addEventListener("click", processCalculatorInput)
+    button.addEventListener("click", e=> {processCalculatorInput(e.target.innerText)})
 }
 
 
@@ -18,11 +18,8 @@ let calculator = {
 }
 
 
-function processCalculatorInput(event) {
-    let input = event.target.innerText
+function processCalculatorInput(input) {
     let len = mainDisplayText.innerText.length
-
-
 
     // Del
     if (input === "del") {
@@ -64,6 +61,7 @@ function processCalculatorInput(event) {
 
         // Operators
         else if ("+-*/✻".includes(input) && calculator.firstNumStr) calculator.operator = input
+        else if (input === "*" && calculator.firstNumStr) calculator.operator = input
     }
     redrawMainDisplay()
 }
@@ -96,3 +94,15 @@ function round(num) {
     let multiplier = 10 ** ROUND_DEC_NUM
     return Math.round(num * (multiplier)) / multiplier
 }
+
+
+document.addEventListener("keydown", e => {
+    console.log(e)
+    let key = e.key
+    if ("1234567890*/+-=".includes(key)) {
+        processCalculatorInput(key)
+    }
+    else if (key === "Backspace") {
+        processCalculatorInput(e.ctrlKey ? "clr" : "del")
+    }
+})
